@@ -1,0 +1,22 @@
+/* 오늘 날짜: 기본 배경 없애기 */
+.react-calendar__tile--now {
+  background: transparent !important;
+  color: inherit;
+  position: relative;
+  z-index: 0;
+}
+
+/* 오늘 날짜 + 마우스 올라갔을 때 */
+.react-calendar__tile--now:hover {
+  background-color: #e2e8f0 !important;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* 모든 타일 hover (참고용) */
+.react-calendar__tile:hover {
+  background-color: #e2e8f0;
+  cursor: pointer;
+  border-radius: 8px;
+}

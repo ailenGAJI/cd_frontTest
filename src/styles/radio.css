@@ -1,0 +1,20 @@
+/* radio 타입: 기본 스타일 바꾸기 */
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+/* radio 타입: 체크 되었을때 */
+input[type='radio']:checked {
+    background-color: #1a691a;
+    border: 3px solid white;
+    box-shadow: 0 0 0 1.6px #1a691a;
+}
