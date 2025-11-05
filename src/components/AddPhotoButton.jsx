@@ -62,6 +62,7 @@ const AddPhotoButton = ({ selectedDate }) => {
         ref={fileInputRef}
         onChange={handleChange}
         className="hidden"
+        capture="camera"
       />
     </>
   );
