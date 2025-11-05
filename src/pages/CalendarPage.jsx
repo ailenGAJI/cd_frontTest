@@ -17,7 +17,7 @@ const CalendarPage = () => {
   // 캘린더에서 날짜를 선택했을 때 백엔드 API 호출
   useEffect(() => {
     getMealsByDate(date);
-  }, [date]); 
+  }, [date]);
 
   //오늘 날짜에 불꽃 이모지
   const tileContent = ({ date, view }) => {
@@ -27,11 +27,11 @@ const CalendarPage = () => {
     const isToday = date.toDateString() === today.toDateString();
 
     return isToday ? (
-        <div className="flex items-center justify-center h-full"> 
-            <Sandwich className="text-lime-600 w-4 h-4" />
-        </div>
+      <div className="flex items-center justify-center h-full">
+        <Sandwich className="text-lime-600 w-4 h-4" />
+      </div>
     ) : null;
-  };
+  };
 
   // 백엔드 호출을 위한 포맷 데이트
   const formatDate = (date) => {
@@ -65,7 +65,7 @@ const CalendarPage = () => {
 
       console.log("식단 호출 성공:", res.data);
       setMealList(res.data);
-      
+
       return res.data;
     } catch (err) {
       console.error("식단 호출 실패:", err.response?.data || err.message);
@@ -86,7 +86,14 @@ const CalendarPage = () => {
 
         <div className="border border-gray-300 rounded-xl mt-6 mb-4 p-4">
           <div className="mb-2 text-sm">
-            <p>{date.toDateString()}</p>
+            <p>
+              {date.toLocaleDateString('ko-KR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                weekday: 'short' // 요일(수)까지 추가
+              })}
+            </p>
           </div>
         </div>
 
