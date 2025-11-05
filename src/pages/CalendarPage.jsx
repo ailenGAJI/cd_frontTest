@@ -26,8 +26,12 @@ const CalendarPage = () => {
     const today = new Date();
     const isToday = date.toDateString() === today.toDateString();
 
-    return isToday ? <div> <Sandwich className = "text-lime-600"/> </div> : null;
-  };
+    return isToday ? (
+        <div className="flex items-center justify-center h-full"> 
+            <Sandwich className="text-lime-600 w-4 h-4" />
+        </div>
+    ) : null;
+  };
 
   // 백엔드 호출을 위한 포맷 데이트
   const formatDate = (date) => {
