@@ -12,10 +12,6 @@ const CalendarPage = () => {
   const [date, setDate] = useState(new Date());
   const [mealList, setMealList] = useState({});
 
-  // 백엔드에서 받아와야 함
-  const [monthlyStats, setMonthlyStats] = useState({ green: 0, yellow: 0, red: 0 });
-
-
   // 캘린더에서 날짜를 선택했을 때 백엔드 API 호출
   useEffect(() => {
     getMealsByDate(date);
@@ -29,12 +25,6 @@ const CalendarPage = () => {
     const isToday = date.toDateString() === today.toDateString();
 
     return isToday ? <span>🔥</span> : null;
-  };
-
-  //각 배율만큼 계산 함수
-  const getBarWidth = (count) => {
-    const total = monthlyStats.green + monthlyStats.yellow + monthlyStats.red;
-    return total === 0 ? '0%' : `${(count / total) * 100}%`;
   };
 
   // 백엔드 호출을 위한 포맷 데이트
@@ -91,24 +81,6 @@ const CalendarPage = () => {
         <div className="border border-gray-300 rounded-xl mt-6 mb-4 p-4">
           <div className="mb-2 text-sm">
             <p>{date.toDateString()}</p>
-          </div>
-
-          <div className="flex h-4 w-full rounded overflow-hidden">
-            <div className="bg-green-500" style={{ width: getBarWidth(monthlyStats.green) }}></div>
-            <div className="bg-yellow-400" style={{ width: getBarWidth(monthlyStats.yellow) }}></div>
-            <div className="bg-red-400" style={{ width: getBarWidth(monthlyStats.red) }}></div>
-          </div>
-
-          <div className="flex justify-between text-sm mt-2">
-            <span className="flex items-center gap-1 text-green-600">
-              <Laugh className="w-5 h-5 text-green" /> {Math.round((monthlyStats.green / (monthlyStats.green + monthlyStats.yellow + monthlyStats.red || 1)) * 100)}%
-            </span>
-            <span className="flex items-center gap-1 text-yellow-600">
-              <Meh className="w-5 h-5 text-Yellow" /> {Math.round((monthlyStats.yellow / (monthlyStats.green + monthlyStats.yellow + monthlyStats.red || 1)) * 100)}%
-            </span>
-            <span className="flex items-center gap-1 text-red-600">
-              <Angry className="w-5 h-5 text-Yellow" /> {Math.round((monthlyStats.red / (monthlyStats.green + monthlyStats.yellow + monthlyStats.red || 1)) * 100)}%
-            </span>
           </div>
         </div>
 

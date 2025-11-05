@@ -2,7 +2,7 @@ import { Laugh, Angry, Annoyed, Smile } from "lucide-react";
 
 export const feedbackPresets = {
     good: {
-      emoji: <Laugh className="w-5 h-5 text-lime-600" />,
+      emoji: <Laugh className="w-5 h-5 text-lime-500" />,
     },
     bad: {
       emoji: <Angry className="w-5 h-5 text-red-700" />,
@@ -11,7 +11,7 @@ export const feedbackPresets = {
       emoji: <Annoyed className="w-5 h-5 text-yellow-600" />,
     },
     default: {
-      emoji: <Smile className="w-5 h-5" />,
+      emoji: <Smile className="w-5 h-5 text-lime-600" />,
       defaultMessage: "건강한 식단! 맛있는 식단!",
     }
   };
