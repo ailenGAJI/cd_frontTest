@@ -9,6 +9,8 @@ import axios from "axios";
 
 const CalendarPage = () => {
 
+  const API_URL = process.env.REACT_APP_API_BASE_URL;
+
   const [date, setDate] = useState(new Date());
   const [mealList, setMealList] = useState({});
 
@@ -24,7 +26,7 @@ const CalendarPage = () => {
     const today = new Date();
     const isToday = date.toDateString() === today.toDateString();
 
-    return isToday ? <span>🔥</span> : null;
+    return isToday ? <div>🔥</div> : null;
   };
 
   // 백엔드 호출을 위한 포맷 데이트
@@ -51,7 +53,7 @@ const CalendarPage = () => {
     const formattedDateString = formatDate(selectedDate);
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/meal/${formattedDateString}`, {
+      const res = await axios.get(`${API_URL}/meal/${formattedDateString}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

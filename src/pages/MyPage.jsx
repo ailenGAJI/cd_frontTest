@@ -29,7 +29,7 @@ const MyPage = () => {
 
       console.log("탈퇴 성공:", res.data);
 
-      // ✅ 성공 처리 (토큰 삭제 & 메인 페이지로 이동)
+      // 성공 처리 (토큰 삭제 & 메인 페이지로 이동)
       localStorage.removeItem("accessToken");
       window.location.href = "/";
 
