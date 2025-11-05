@@ -13,7 +13,7 @@ const FeedbackMessage = ({ dailyFeedbackText }) => { // props에 기본값 제�
     return (
         <div className="flex items-center justify-center my-4">
             <span className="text-2xl mr-2">{emoji}</span>
-            <div className="rounded-lg p-3 shadow text-sm leading-5">
+            <div className="rounded-lg p-3 shadow text-sm leading-5 whitespace-pre-line">
                 {message}
             </div>
         </div>
