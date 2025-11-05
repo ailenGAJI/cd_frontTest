@@ -64,7 +64,7 @@ const MainPage = () => {
     try {
       const token = localStorage.getItem("accessToken");
 
-      const res = await fetch("http://localhost:5000/api/meal/delete", {
+      const res = await fetch(`${API_URL}/meal/delete`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
