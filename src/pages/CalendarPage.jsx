@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../styles/calendar.css'
-import { Laugh, Meh, Angry } from "lucide-react";
+import { Sandwich } from 'lucide-react';
 import DateSaveMeal from '../components/DateSaveMeal';
 import BottomNavBar from '../components/BottomNavBar';
 import axios from "axios";
@@ -26,7 +26,7 @@ const CalendarPage = () => {
     const today = new Date();
     const isToday = date.toDateString() === today.toDateString();
 
-    return isToday ? <div>🔥</div> : null;
+    return isToday ? <div> <Sandwich className = "text-lime-600"/> </div> : null;
   };
 
   // 백엔드 호출을 위한 포맷 데이트
