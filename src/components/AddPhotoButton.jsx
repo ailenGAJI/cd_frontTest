@@ -58,11 +58,11 @@ const AddPhotoButton = ({ selectedDate }) => {
       </button>
       <input
         type="file"
-        accept="image/*"
+        accept="image/*,application/pdf"
         ref={fileInputRef}
         onChange={handleChange}
         className="hidden"
-        capture="camera"
+        //capture="camera"
       />
     </>
   );
