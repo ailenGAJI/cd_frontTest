@@ -224,7 +224,9 @@ const MainPage = () => {
     <div className="max-w-xl mx-auto">
       <div className="bg-white px-4">
         {/* 날짜 선택 */}
-        <HeaderDatePicker selectedDate={selectedDate} onDateChange={handleDateChange} />
+        <div className="w-full shadow-sm">
+           <HeaderDatePicker selectedDate={selectedDate} onDateChange={handleDateChange} />
+        </div>
 
         {/* 한 줄 피드백 메시지 */}
         <FeedbackMessage dailyFeedbackText={dailyFeedbackText} />
