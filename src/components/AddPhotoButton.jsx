@@ -50,7 +50,7 @@ const AddPhotoButton = ({ selectedDate }) => {
     <>
       <button
         onClick={handleClick}
-        className="w-24 h-24 rounded-full border-2 border-[#6B8E23] text-3xl font-bold 
+        className="w-20 h-20 rounded-full border-2 border-[#6B8E23] text-3xl font-bold 
         flex items-center justify-center 
         transition-all duration-300 hover:scale-110"
       >
