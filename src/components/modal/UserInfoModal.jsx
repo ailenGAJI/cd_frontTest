@@ -133,7 +133,7 @@ const StartInfoModal = ({ onClose }) => {
                     <div className="flex justify-end space-x-2">
                         <button
                             className="px-4 py-2 bg-[#d6b454] hover:bg-[#fcba03] rounded text-white font-semibold"
-                            onClick={handleSubmit}
+                            onClick={onClose}
                             disabled={!userName}
                         >
                             확인
